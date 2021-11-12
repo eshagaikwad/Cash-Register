@@ -1,0 +1,53 @@
+body{
+    
+    background-color: #EEEEBB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+.container{
+    background-color: #CC5577;
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+
+}
+#check-button{
+    cursor: pointer;
+    background-color: var(--dark-purple);
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+     
+}
+
+#bill-amount, #cash-given{
+      padding: 0.5rem 1rem;
+    font-size: larger;
+    border-radius: 20%;
+    border-color: white;
+
+}
+
+input, label, table caption {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 0.5rem;
+}
+#error-message{
+    font-size: larger;
+}
+
+th, td {
+    border: 2px solid;
+    padding: 0.2rem;
+}
+.table-container {
+    width: 100%;
+}
+
+
