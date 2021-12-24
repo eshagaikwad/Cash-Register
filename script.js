@@ -1,43 +1,38 @@
-const billamount = document.querySelector("#bill-amount");
-// const checkbutton = console.log(billamount.value);
-const cashgiven = document.querySelector("#cash-given");
-console.log(cashgiven.value)
-const checkbutton = document.querySelector('#check-button');
-const message = document.querySelector('#error-message')
-const noOfnotes = document.querySelectorAll(".no-of-notes");
+const billAmount = document.querySelector("#bill-amount");
+const cashGiven = document.querySelector("#cash-given");
+const checkButton = document.querySelector("#check-button");
+const message = document.querySelector("#error-message");
+const noOfNotes = document.querySelectorAll(".no-of-notes");
 
-const availableNotes = [2000, 500, 100, 20, 50, 1];
+const availaibleNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-checkbutton.addEventListener('click', () => {
+checkButton.addEventListener('click', () => {
     hideMessage();
-
-
-
-    if (billamount.value > 0) {
+    if (billAmount.value > 0) {
         hideMessage();
-
-        if (cashgiven.value >= billamount.value) {
-            const amounttobereturned = cashgiven.value - billamount.value;
-            calculatechange(amounttobereturned);
+        if (cashGiven.value >= billAmount.value) {
+            const amountToBeReturned = cashGiven.value - billAmount.value;
+            calculateChange(amountToBeReturned);
         }
         else {
-            showMessage("The cash given should be atleast equal to Bill Amount");
+            showMessage("Cash given must be greater than the bill amount");
         }
     } else {
-        showMessage("Invalid bill amount🥴");
+        showMessage("Invalid amount");
     }
 });
 
+function calculateChange(amountToBeReturned) {
+    for (let i = 0; i < availaibleNotes.length; i++) {
 
+        const numberOfNotes = Math.trunc(amountToBeReturned / availaibleNotes[i]);
 
+        amountToBeReturned %= availaibleNotes[i];
 
-function calculatechange(amounttobereturned) {
-    for (let i = 0; i < availableNotes.length; i++) {
-        const numberofnotes = Math.trunc(amounttobereturned / availableNotes[i]);
-        amounttobereturned = amounttobereturned % availableNotes[i];
-        noOfnotes[i].innerText = numberofnotes;
+        noOfNotes[i].innerText = numberOfNotes;
     }
 }
+
 function hideMessage() {
     message.style.display = "none";
 }

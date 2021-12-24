@@ -1,36 +1,39 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&family=Roboto+Condensed:ital,wght@0,300;1,700&display=swap');
+:root {
+   --light-pink:#fb7185;
+   --pink-rose:#fecdd3;
+   
+}
+
+body {
     
-    background-color: #EEEEBB;
+    font-family: 'Source Sans Pro', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    background:linear-gradient(to left,#fb7185,#fecdd3);
     
-
 }
 
-.container{
-    background-color: #CC5577;
+.container {
+
     display: flex;
+    align-items: center;
     flex-direction: column;
-    width: 45vw;
-
+    width: 50vw;
+    max-width: 45%;
+    margin: 5px;
+    padding: 15px 50px;
+    color:black;
 }
-#check-button{
+
+button {
     cursor: pointer;
-    background-color: var(--dark-purple);
-    color: white;
+    background-color: var(--pink-rose);
+    color: black;
     padding: 10px 20px;
     margin: 20px;
-     
-}
-
-#bill-amount, #cash-given{
-      padding: 0.5rem 1rem;
-    font-size: larger;
-    border-radius: 20%;
-    border-color: white;
-
+    border-radius: 50%;
 }
 
 input, label, table caption {
@@ -38,16 +41,24 @@ input, label, table caption {
     font-size: 1.3rem;
     margin: 0.5rem;
 }
-#error-message{
-    font-size: larger;
+
+#cash-given, #bill-amount {
+    padding: 0.5rem 1rem;
+    font-size: medium;
 }
 
-th, td {
-    border: 2px solid;
-    padding: 0.2rem;
+table {
+    border-spacing: 2px;
+    text-align: center;
+
 }
+
 .table-container {
     width: 100%;
 }
-
-
+th, td {
+    border: 1px solid;
+    word-wrap: break-word;
+    padding: 0.1rem;
+    
+}
